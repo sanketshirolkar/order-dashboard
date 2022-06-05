@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 export const RenderOrderId = (data) => {
   return (
@@ -25,8 +25,11 @@ export const RenderOrderDate = (data) => {
 }
 
 export const RenderItems = (data) => {
+  let splitValue = data?.items.split(";").join(" ");
+  let abc = splitValue.split(":").join("-");
+  
   return (
-    <div>{data.items}</div>
+    <div>{abc}</div>
   )
 }
 
@@ -53,7 +56,7 @@ export const tableRows = [
     },
     {
       title: "Items",
-      index: 5,
+      index: "5",
       render: RenderItems,
     },
   ];
